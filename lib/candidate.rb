@@ -6,4 +6,8 @@ class Candidate
       party:  candidate_details[:party]
     }
   end
+
+  def name
+    candidate_details[:name]
+  end
 end
