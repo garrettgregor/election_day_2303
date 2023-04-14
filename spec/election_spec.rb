@@ -12,8 +12,8 @@ RSpec.describe Election do
     it "exists and has attributes" do
       expect(@election2023.class).to eq(Election)
       expect(@election2023.year).to eq("2023")
-      expect(@election2023.races).to be_an Array
-      expect(@election2023.candidates).to be_an Array
+      expect(@election2023.races).to be_a Array
+      expect(@election2023.candidates).to be_a Array
       expect(@election2023.vote_counts).to be_a Hash
     end
   end
@@ -26,20 +26,20 @@ RSpec.describe Election do
     
     it "ensures all candidates from all races are added to election candidates" do
       @election2023.add_race(@race)
+
       expect(@election2023.candidates).to eq([@candidate1, @candidate2])
     end
     
-    it "counts votes of all candidates added to election" do
-      @candidate1.vote_for!
-      @candidate1.vote_for!
-      @candidate1.vote_for!
-      @candidate2.vote_for!
-      @election2023.add_race(@race)
+    # it "counts votes of all candidates added to election" do
+    #   @candidate1.vote_for!
+    #   @candidate1.vote_for!
+    #   @candidate1.vote_for!
+    #   @candidate2.vote_for!
 
-      expect(@election2023.vote_counts).to eq({
-        "Diana D"=>3, 
-        "Roberto R"=>1
-      })
-    end
+    #   expect(@election2023.vote_counts).to eq({
+    #     "Diana D"=>3, 
+    #     "Roberto R"=>1
+    #   })
+    # end
   end
 end

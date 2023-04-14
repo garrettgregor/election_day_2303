@@ -33,7 +33,8 @@ RSpec.describe Race do
   end
   
   describe "open?" do
-    it "checks whether a race is open"
+    it "checks whether a race is open" do
       expect(@race.open?).to be true
+    end
   end
 end
