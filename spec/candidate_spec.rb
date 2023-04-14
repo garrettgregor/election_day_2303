@@ -16,4 +16,10 @@ RSpec.describe Candidate do
       expect(@diana.name).to eq("Diana D")
     end
   end
+  
+  describe "party" do
+    it "list the candidates name" do
+      expect(@diana.name).to eq("Diana D")
+    end
+  end
 end
