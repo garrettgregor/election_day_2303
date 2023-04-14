@@ -13,7 +13,7 @@ class Election
 
   def candidates
     arr = []
-    @races.flat_map do |race|
+    @races.each do |race|
       race.candidates.each do |candidate|
         arr << candidate
       end
