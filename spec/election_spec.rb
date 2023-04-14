@@ -25,7 +25,21 @@ RSpec.describe Election do
     end
     
     it "ensures all candidates from all races are added to election candidates" do
+      @election2023.add_race(@race)
       expect(@election2023.candidates).to eq([@candidate1, @candidate2])
+    end
+    
+    it "counts votes of all candidates added to election" do
+      @candidate1.vote_for!
+      @candidate1.vote_for!
+      @candidate1.vote_for!
+      @candidate2.vote_for!
+      @election2023.add_race(@race)
+
+      expect(@election2023.vote_counts).to eq({
+        "Diana D"=>3, 
+        "Roberto R"=>1
+      })
     end
   end
 end

@@ -7,13 +7,20 @@ class Election
     @year         = year
     @races        = []
     @candidates   = []
-    @vote_counts  = {}
+    @vote_counts  = Hash.new(0)
   end
 
   def add_race(race)
+    @races << race
     race.candidates.find_all do |candidate|
       @candidates << candidate
     end
-    @races << race
+    count_votes
+  end
+
+  def count_votes
+    candidates.each do |candidate|
+      @vote_counts[candidate.name] += candidate.votes
+    end
   end
 end
