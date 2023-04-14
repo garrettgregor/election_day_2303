@@ -37,4 +37,14 @@ RSpec.describe Race do
       expect(@race.open?).to be true
     end
   end
+  
+  describe "close" do
+    it "closes a race" do
+      expect(@race.open?).to be true
+
+      @race.close!
+
+      expect(@race.open?).to be false
+    end
+  end
 end
