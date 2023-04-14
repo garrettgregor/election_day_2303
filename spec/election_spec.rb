@@ -23,5 +23,9 @@ RSpec.describe Election do
       expect(@election2023.add_race(@race)).to be_an Array
       expect(@election2023.races).to eq([@race])
     end
+    
+    it "ensures all candidates from all races are added to election candidates" do
+      expect(@election2023.candidates).to eq([@candidate1, @candidate2])
+    end
   end
 end

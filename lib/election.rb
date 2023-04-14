@@ -11,7 +11,9 @@ class Election
   end
 
   def add_race(race)
-    @candidates << race.candidate
+    race.candidates.find_all do |candidate|
+      @candidates << candidate
+    end
     @races << race
   end
 end
