@@ -9,4 +9,9 @@ class Election
     @candidates   = []
     @vote_counts  = {}
   end
+
+  def add_race(race)
+    @candidates << race.candidate
+    @races << race
+  end
 end

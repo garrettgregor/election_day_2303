@@ -27,10 +27,8 @@ RSpec.describe Race do
     it "can register multiple candidates and track those candidates" do
       candidate1 = @race.register_candidate!({name: "Diana D", party: :democrat})
       candidate2 = @race.register_candidate!({name: "Roberto R", party: :republican})
-      # => #<Candidate:0x00007f9edf386780...>
 
       expect(@race.candidates).to eq([candidate1, candidate2])
-      # => [#<Candidate:0x00007f9edf376c90...>, #<Candidate:0x00007f9edf386780...>]
     end
   end
 end
