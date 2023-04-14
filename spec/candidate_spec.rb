@@ -10,6 +10,7 @@ RSpec.describe Candidate do
       expect(@diana).to be_a(Candidate)
       expect(@diana.name).to eq("Diana D")
       expect(@diana.party).to eq("Diana D")
+      expect(@diana.votes).to eq(0)
     end
   end
 end
