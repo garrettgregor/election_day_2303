@@ -7,18 +7,13 @@ class Election
   end
   
   def add_race(race)
-    @races << race
-    @races
+    @races << race # this automatically returns races, so no need to return @races
   end
 
   def candidates
-    arr = []
-    @races.each do |race|
-      race.candidates.each do |candidate|
-        arr << candidate
-      end
+    @races.flat_map do |race|
+      race.candidates
     end
-    arr
   end
 
   def vote_counts
